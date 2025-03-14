@@ -2,10 +2,73 @@
 <html>
   <head>
 <title>Dokkan Battle wiki</title>
+ <input type=button value=Atrás onclick="history.go(-1)">
+
+    <SCRIPT LANGUAGE="JavaScript">
+ alert("Bienvenido");
  
+ var nom;
+ nom=prompt("Escribe tu nombre","NOMBRE");
+ alert("Mucho gusto " +nom);
+ 
+ function abrir_ventana()
+ {
+    window.open("https://youtu.be/r11mz5jvHaU?si=Q4aYc52ZFsFiEmwF");
+ }
+ 
+ function para_abrir()
+ {
+    clearTimeout(pop);
+ }
+ 
+ pop= setInterval ("abrir_ventana()",100000);
+ 
+ function confirmar()
+ {
+   return confirm("Esta página contiene contenido para mayores de 14 años. ¿Los cumples?")
+   }
+   
+   function Ver_Hora()
+   {
+     var mihora = new Date();
+     var horas = mihora.getHours() .toString();
+     var minutos = mihora.getMinutes() .toString();
+     if (minutos.length == 1) minutos = "0" + minutos;
+     var segundos = mihora.getSeconds() .toString();
+     if (segundos.length == 1) segundos = "0" + segundos;
+     
+     document.forms[0].mireloj.value = horas + ":" + minutos +":" + segundos;
+   }
+   
+   
+ </SCRIPT>
 <link rel="stylesheet" href="estilo.css"/>
  </head>
 <body>
+
+   <form>
+<p align="center">
+<input type="text" size="10" name "mireloj">
+</p>
+</form>
+<script>
+   var r = setInterval ("Ver_Hora()",500);
+  
+  function mailpage()
+   {
+     mail_str = "mailto:nombre@dominio.com?subject=Ejemplo:" + document.title;
+     
+     mail_str +="&body=Te recomiendo que visites esta página (http://www.cnice.mec.es/)--" + document.title;
+     mail_str += ".Enlace:" + location.href;
+     location.href = mail_str;
+     }
+  
+  
+   </script>
+  
+ <input type=button value="Parar de abrir ventanas"
+ onclick="parar_abrir()">
+    
   <h1>Dokkan Battle Wiki</h1>
     <p>Bienvenido a la guía de Dragon Ball Dokkan Battle. Se discutiran varios puntos en esta guía, los cuales son:</p>
     <ul>
@@ -70,11 +133,9 @@ Stone.jpeg
                  </tr>
             </tbody>
         </table>
+<a href="" onclick="return confirmar()">Enlace a la wiki oficial</a>
 
-
-
-
-
+<a HREF="javascript:mailpage()">¡Mandar correo!</a>
 
 </body>
 </html>
